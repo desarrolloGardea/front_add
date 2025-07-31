@@ -3,8 +3,9 @@ import type { Session } from '../domain/auth';
 import type { ApiService, SignInAction, LogOutAction } from './port';
 
 
-export default async function authenticate(user: User, api: ApiService, signIn: SignInAction, logOut: LogOutAction): Promise<Boolean> {
+export default async function authenticate(user: User, api: ApiService, signIn: SignInAction): Promise<Boolean> {
     const resp = await api.login(user);
+    const logOut: LogOutAction = () => {};
 
     if (resp.data) {
         const session: Session = resp.data;
