@@ -29,7 +29,7 @@ export default function Login() {
                             type="text"
                             name="name"
                             placeholder="@usuario"
-                            className="border border-black p-2 mb-8 rounded-md"
+                            className="border p-2 mb-8 rounded-md"
                             value={user.name}
                             onChange={handleChange}
                             required
@@ -39,7 +39,7 @@ export default function Login() {
                             type="password"
                             name="password"
                             placeholder="*****"
-                            className="border border-black p-2 mb-8 rounded-md"
+                            className="border p-2 mb-8 rounded-md"
                             value={user.password}
                             onChange={handleChange}
                             required
