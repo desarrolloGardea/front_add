@@ -38,7 +38,7 @@ export default function Login() {
                         <input
                             type="password"
                             name="password"
-                            placeholder="*****"
+                            placeholder="**********"
                             className="border p-2 mb-8 rounded-md"
                             value={user.password}
                             onChange={handleChange}

@@ -22,8 +22,12 @@ export default function useLogin() {
     const habdleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         const isLogged = await authenticate(user, api, signIn);
-        isLogged && navigate("/");
-        !isLogged && alert("Invalid credentials")
+        if (isLogged) {
+            console.log('Login successful! User:', user.name);
+            navigate("/");
+        } else {
+            alert("Invalid credentials")
+        }
     }
     return [user, handleChange, habdleSubmit] as const
 
