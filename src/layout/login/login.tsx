@@ -5,23 +5,40 @@ export default function Login() {
 
     return (
         <>
-            <div className="relative w-screen h-screen flex items-center justify-center bg-gradient-to-r from-base to-baseDark">
-                <div className="absolute t-0 l-0 flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-white rounded-2xl border border-black shadow-xl">
-                    <h2 className="text-2xl font-bold text-center mb-8">Ahorita, déjame divagar</h2>
-                    <form onSubmit={habdleSubmit} className="flex flex-col">
+            <section className="w-screen h-screen flex columns-2xs bg-gradient-to-b from-base to-baseContrast">
+                <div className="w-1/2 h-full flex flex-col justify-center p-12 items-start pr-10 space-y-12">
+
+                    <div className="flex items-baseline">
+                        <span className="text-8xl text-white font-extrabold leading-none">A</span>
+                        <span className="text-3xl text-white font-semibold ml-1">horita</span>
+                    </div>
+                    <div className="flex items-baseline">
+                        <span className="text-8xl text-white font-extrabold leading-none">D</span>
+                        <span className="text-3xl text-white font-semibold ml-1">éjame</span>
+                    </div>
+                    <div className="flex items-baseline">
+                        <span className="text-8xl text-white font-extrabold leading-none">D</span>
+                        <span className="text-3xl text-white font-semibold ml-1">ivagar</span>
+                    </div>
+                </div>
+                <div className="w-1/2 h-full flex flex-col justify-center p-12 items-start">
+
+                    <form onSubmit={habdleSubmit} className="flex flex-col w-2/3 max-w-md">
+                        <p className="text-1xl text-white font-bold">Usuario</p>
                         <input
                             type="text"
                             name="name"
-                            placeholder="Usuario"
+                            placeholder="@usuario"
                             className="border border-black p-2 mb-8 rounded-md"
                             value={user.name}
                             onChange={handleChange}
                             required
                         />
+                        <p className="text-1xl text-white font-bold">Contraseña</p>
                         <input
                             type="password"
                             name="password"
-                            placeholder="Contraseña"
+                            placeholder="*****"
                             className="border border-black p-2 mb-8 rounded-md"
                             value={user.password}
                             onChange={handleChange}
@@ -29,14 +46,14 @@ export default function Login() {
                         />
                         <button
                             type="submit"
-                            className="bg-baseDark text-white p-2 rounded-md hover:bg-base transition"
+                            className="bg-baseContrast text-primary p-2 rounded-md hover:bg-base transition"
                         >
                             Ingresar
                         </button>
                     </form>
                 </div>
-                <div className='absolute bottom-0 right-0 text-white p-4 font-ligth'>{`versión ${import.meta.env.VITE_VERSION}`}</div>
-            </div>
+
+            </section>
         </>
 
     );
